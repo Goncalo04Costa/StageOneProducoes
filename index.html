@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add('js');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage One Produções</title>
+<meta name="description" content="Stage One Produções — produção e organização de eventos, contratação de artistas e aluguer de som, luz, ledwall, geradores, palcos e camarins. O teu evento, a nossa missão.">
+<meta name="theme-color" content="#0A0A0C">
+<meta name="author" content="Stage One Produções">
+
+<!-- ========================================================================
+     Ao publicar, substitui  https://stageoneproducoes.pt  pelo domínio real
+     nas 3 meta tags og:url / og:image / twitter:image e no JSON-LD abaixo.
+     ======================================================================== -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Stage One Produções">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:url" content="https://stageoneproducoes.pt/">
+<meta property="og:title" content="Stage One Produções — o teu evento, a nossa missão">
+<meta property="og:description" content="Produção de eventos, contratação de artistas e aluguer de som, luz, ledwall, geradores, palcos e camarins.">
+<meta property="og:image" content="https://stageoneproducoes.pt/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Stage One Produções — produção de eventos">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stage One Produções — o teu evento, a nossa missão">
+<meta name="twitter:description" content="Produção de eventos, contratação de artistas e aluguer técnico.">
+<meta name="twitter:image" content="https://stageoneproducoes.pt/og.jpg">
+<link rel="canonical" href="https://stageoneproducoes.pt/">
+
+<link rel="icon" href="./icon.png">
+<link rel="apple-touch-icon" href="./icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://stageoneproducoes.pt/#business",
+  "name": "Stage One Produções",
+  "description": "Empresa de produção e organização de eventos, contratação e gestão de artistas e aluguer de som, luz, ledwall, geradores, palcos e camarins.",
+  "url": "https://stageoneproducoes.pt/",
+  "image": "https://stageoneproducoes.pt/og.jpg",
+  "logo": "https://stageoneproducoes.pt/logo.jpg",
+  "slogan": "O teu evento, a nossa missão.",
+  "telephone": "+351932091099",
+  "email": "stageone-prod@hotmail.com",
+  "areaServed": { "@type": "Country", "name": "Portugal" },
+  "knowsLanguage": "pt-PT",
+  "sameAs": [ "https://www.instagram.com/stage_one_producoes/" ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "name": "Filipe Remelhe",
+    "telephone": "+351932091099",
+    "email": "stageone-prod@hotmail.com",
+    "availableLanguage": "Portuguese"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Produção de eventos", "description": "Produção e organização de festas, concertos, festivais, eventos empresariais e celebrações." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contratação de artistas", "description": "Contratação e gestão de artistas, do primeiro contacto até ao final do evento." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aluguer de equipamento", "description": "Aluguer de som, luz, ledwall, geradores, palcos e camarins." } }
+    ]
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* ============================================================
+   STAGE ONE PRODUÇÕES — sítio institucional
+   Tema único (venue às escuras + luz de palco). Committed dark.
+   ============================================================ */
+
+:root{
+  color-scheme: dark;
+
+  /* -- grounds -- */
+  --bg:        #0A0A0C;   /* near-black, leve viés violeta = escolhido */
+  --bg-raise:  #131118;
+  --bg-panel:  #17151D;
+  --line:      #2B2833;
+  --line-soft: #201E29;
+
+  /* -- ink -- */
+  --text:      #EDEAE3;
+  --text-dim:  #9C98A6;
+  --text-mute: #6C6878;
+
+  /* -- ouro metálico (a estrela) -- */
+  --gold-hi:   #F7DCA6;
+  --gold:      #E7B24C;
+  --gold-deep: #B07C2C;
+  --gold-grad: linear-gradient(176deg, #F7DCA6 0%, #E7B24C 46%, #B07C2C 100%);
+
+  /* -- ambiência (só brilhos, nunca texto) -- */
+  --wash-violet: 127,96,196;
+  --wash-gold:   231,178,76;
+
+  --ok: #63C595;
+
+  --radius:    14px;
+  --radius-sm: 9px;
+  --container: 1120px;
+  --pad-x:     clamp(1.15rem, 5vw, 3rem);
+  --section-y: clamp(4.5rem, 11vw, 9rem);
+
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body:    "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:1rem;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+
+::selection{ background:rgba(231,178,76,.28); color:#fff; }
+
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:2px;
+}
+
+::-webkit-scrollbar{ width:12px; }
+::-webkit-scrollbar-track{ background:var(--bg); }
+::-webkit-scrollbar-thumb{ background:#2B2833; border-radius:10px; border:3px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover{ background:#3d3a49; }
+
+/* ---------- ambiente de luz de palco ---------- */
+.fx{
+  position:fixed; inset:0; z-index:0;
+  pointer-events:none; overflow:hidden;
+  background:
+    radial-gradient(72% 55% at 15% -8%, rgba(var(--wash-gold),.16), transparent 70%),
+    radial-gradient(62% 52% at 90% -2%, rgba(var(--wash-violet),.20), transparent 72%),
+    radial-gradient(120% 90% at 50% 118%, rgba(18,15,24,.65), transparent 60%),
+    var(--bg);
+}
+.fx__c{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+
+/* grão de filme por cima de tudo, muito subtil */
+body::after{
+  content:""; position:fixed; inset:0; z-index:1; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  background-size:140px 140px;
+  opacity:.04;
+  mix-blend-mode:overlay;
+}
+
+/* ---------- layout base ---------- */
+.container{
+  width:100%;
+  max-width:var(--container);
+  margin-inline:auto;
+  padding-inline:var(--pad-x);
+}
+.section{ position:relative; z-index:2; scroll-margin-top:4.5rem; }
+.about,.services,.process,.contact{ background:var(--bg); padding-block:var(--section-y); }
+
+.skip{
+  position:absolute; left:-9999px; top:0; z-index:100;
+  background:var(--gold-grad); color:#1A1206;
+  padding:.7rem 1.1rem; border-radius:0 0 8px 0;
+  font-family:var(--font-mono); font-size:.8rem; font-weight:600;
+  text-decoration:none;
+}
+.skip:focus{ left:0; }
+
+/* ---------- cabeçalho ---------- */
+.site-header{
+  position:fixed; inset:0 0 auto 0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  padding:.85rem var(--pad-x);
+  border-bottom:1px solid transparent;
+  transition:background .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+}
+.site-header.is-scrolled{
+  background:rgba(10,10,12,.72);
+  backdrop-filter:blur(12px) saturate(1.3);
+  -webkit-backdrop-filter:blur(12px) saturate(1.3);
+  border-bottom-color:var(--line-soft);
+}
+.brand{ display:flex; align-items:center; text-decoration:none; color:var(--text); }
+.brand img{ height:26px; width:auto; display:block; }
+@media (max-width:400px){ .brand img{ height:22px; } }
+
+.nav{ display:flex; align-items:center; gap:1.7rem; }
+.nav a:not(.btn){
+  font-family:var(--font-mono); font-size:.76rem; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--text-dim); text-decoration:none;
+  padding:.35rem 0; position:relative;
+}
+.nav a:not(.btn):hover{ color:var(--text); }
+.nav a:not(.btn)::after{
+  content:""; position:absolute; left:0; right:100%; bottom:0; height:1px;
+  background:var(--gold); transition:right .3s ease;
+}
+.nav a:not(.btn):hover::after{ right:0; }
+
+.nav-toggle{
+  display:none; width:44px; height:44px; flex:none;
+  border:1px solid var(--line); border-radius:10px;
+  background:var(--bg-raise); position:relative; cursor:pointer; z-index:60;
+}
+.nav-toggle span{
+  position:absolute; left:11px; right:11px; height:2px; border-radius:2px;
+  background:var(--text); transition:transform .3s ease, opacity .2s ease;
+}
+.nav-toggle span:nth-child(1){ top:15px; }
+.nav-toggle span:nth-child(2){ top:21px; }
+.nav-toggle span:nth-child(3){ top:27px; }
+.nav-toggle[aria-expanded="true"] span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+
+@media (max-width:860px){
+  .nav-toggle{ display:block; }
+  .nav{
+    position:fixed; inset:0 0 auto 0; z-index:40;
+    flex-direction:column; align-items:stretch; gap:0;
+    padding:5.5rem var(--pad-x) 2rem;
+    background:var(--bg); border-bottom:1px solid var(--line);
+    transform:translateY(-101%);
+    transition:transform .38s cubic-bezier(.2,.7,.2,1);
+  }
+  .nav.is-open{ transform:none; }
+  .nav a:not(.btn){
+    padding:1.05rem 0; font-size:.95rem;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav .btn{ margin-top:1.3rem; justify-content:center; }
+}
+
+/* ---------- botões ---------- */
+.btn{
+  display:inline-flex; align-items:center; gap:.5rem;
+  padding:.95rem 1.55rem;
+  font-family:var(--font-mono); font-weight:600; font-size:.8rem;
+  letter-spacing:.09em; text-transform:uppercase;
+  border:1px solid transparent; border-radius:999px;
+  text-decoration:none; cursor:pointer; white-space:nowrap;
+  transition:transform .2s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+}
+.btn--sm{ padding:.62rem 1.05rem; font-size:.72rem; }
+.btn--gold{
+  background:var(--gold-grad); color:#1A1206;
+  box-shadow:0 1px 0 rgba(255,255,255,.35) inset, 0 12px 32px -14px rgba(231,178,76,.65);
+}
+.btn--ghost{ border-color:#4A4553; color:var(--text); background:transparent; }
+.btn--ghost:hover{ border-color:var(--gold); background:rgba(231,178,76,.08); }
+@media (prefers-reduced-motion: no-preference){
+  .btn--gold:hover{
+    transform:translateY(-2px);
+    box-shadow:0 1px 0 rgba(255,255,255,.5) inset, 0 18px 42px -14px rgba(231,178,76,.8);
+  }
+  .btn--ghost:hover{ transform:translateY(-2px); }
+}
+
+/* ---------- rótulos de secção ---------- */
+.eyebrow{
+  display:flex; align-items:center; gap:.7rem; margin:0 0 1.4rem;
+  font-family:var(--font-mono); font-size:.73rem; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--gold);
+}
+.eyebrow::before{ content:""; width:28px; height:1px; background:var(--gold); flex:none; }
+
+.s-title{
+  margin:0;
+  font-family:var(--font-display); font-weight:800; font-stretch:118%;
+  text-transform:uppercase; letter-spacing:.02em; line-height:1.03;
+  font-size:clamp(1.9rem, 4.6vw, 3.1rem);
+  text-wrap:balance;
+}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative; z-index:2; background:transparent; text-align:center;
+  padding:clamp(7.5rem, 17vw, 10.5rem) 0 clamp(4rem, 10vw, 6.5rem);
+}
+.hero .container{ position:relative; z-index:2; }
+.hero__fade{
+  position:absolute; left:0; right:0; bottom:0; height:180px; z-index:1;
+  background:linear-gradient(to bottom, transparent, var(--bg));
+  pointer-events:none;
+}
+
+.kicker{
+  display:flex; align-items:center; justify-content:center; gap:.85rem;
+  margin:0 0 1.7rem;
+  font-family:var(--font-mono); font-size:.74rem; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--gold);
+}
+.kicker span{ width:26px; height:1px; background:currentColor; opacity:.55; }
+
+.wordmark{
+  display:inline-flex; flex-direction:column; align-items:center; gap:.6rem;
+  margin:0 auto;
+}
+.wordmark__main{
+  display:flex; align-items:stretch; gap:clamp(.5rem, 2vw, 1.15rem);
+  font-family:var(--font-display); font-weight:900; font-stretch:125%;
+  text-transform:uppercase; letter-spacing:.03em; line-height:.9;
+  font-size:clamp(2.4rem, 9.5vw, 6.6rem);
+  background:linear-gradient(100deg,#B07C2C 0%,#E7B24C 26%,#FFF3D6 46%,#E7B24C 66%,#B07C2C 100%);
+  background-size:260% 100%; background-position:50% 0;
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 3px 26px rgba(231,178,76,.18));
+}
+.wordmark__div{
+  width:2px; align-self:stretch; margin-block:.14em;
+  background:linear-gradient(var(--gold-hi), var(--gold-deep)); opacity:.65;
+}
+.wordmark__sub{
+  font-family:var(--font-mono); font-weight:500;
+  text-transform:uppercase; letter-spacing:.62em; margin-right:-.62em;
+  font-size:clamp(.72rem, 2.4vw, 1rem); color:var(--text-dim);
+}
+
+.hero__tagline{
+  margin:2.1rem auto 0; max-width:26ch;
+  font-family:var(--font-display); font-weight:700; font-stretch:112%;
+  font-size:clamp(1.15rem, 2.7vw, 1.7rem); line-height:1.32;
+  text-wrap:balance; color:var(--text);
+  text-shadow:0 2px 24px rgba(0,0,0,.55);
+}
+.hero__lead{
+  margin:1.4rem auto 0; max-width:60ch;
+  color:#C7C3CE; font-size:clamp(1rem, 1.4vw, 1.13rem);
+}
+.hero__cta{
+  display:flex; flex-wrap:wrap; gap:.9rem; justify-content:center;
+  margin-top:2.4rem;
+}
+.hero__tags{
+  list-style:none; padding:0; margin:3rem auto 0;
+  display:flex; flex-wrap:wrap; gap:.55rem; justify-content:center;
+  max-width:620px;
+}
+.hero__tags li{
+  font-family:var(--font-mono); font-size:.71rem; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--text-dim);
+  border:1px solid var(--line); border-radius:999px; padding:.42rem .82rem;
+}
+
+/* ---------- sobre ---------- */
+.about__grid{
+  display:grid; gap:clamp(2rem, 5vw, 4rem); grid-template-columns:1fr;
+}
+@media (min-width:900px){
+  .about__grid{ grid-template-columns:.85fr 1.15fr; }
+  .about__grid > :first-child{ position:sticky; top:5.5rem; align-self:start; }
+}
+.about__body > p{ margin:0 0 1.1rem; color:var(--text-dim); max-width:62ch; }
+.about__body > p.lead{
+  color:var(--text); font-size:clamp(1.1rem, 1.7vw, 1.35rem);
+  font-family:var(--font-display); font-weight:600; font-stretch:110%; line-height:1.4;
+}
+
+.values{
+  display:grid; gap:1px; margin:2rem 0 0;
+  background:var(--line-soft); border:1px solid var(--line-soft);
+  border-radius:var(--radius); overflow:hidden;
+}
+@media (min-width:620px){ .values{ grid-template-columns:repeat(3,1fr); } }
+.values > div{ background:var(--bg); padding:1.35rem; }
+.values dt{
+  font-family:var(--font-display); font-weight:800; font-stretch:120%;
+  text-transform:uppercase; letter-spacing:.05em; font-size:.95rem; color:var(--gold);
+}
+.values dd{ margin:.5rem 0 0; font-size:.88rem; color:var(--text-dim); }
+
+/* ---------- serviços ---------- */
+.services{
+  background:
+    linear-gradient(180deg, transparent, rgba(255,255,255,.015) 10%, rgba(255,255,255,.015) 90%, transparent),
+    var(--bg);
+}
+.svc-stack{ display:grid; gap:1.15rem; margin-top:clamp(2.2rem, 5vw, 3.5rem); }
+
+.panel{
+  border:1px solid var(--line); border-radius:var(--radius);
+  background:var(--bg-raise); padding:clamp(1.5rem, 4vw, 2.6rem);
+}
+@media (prefers-reduced-motion: no-preference){
+  .panel{ transition:border-color .25s ease; }
+  .panel:hover{ border-color:#3E3747; }
+}
+.panel--feature{
+  position:relative; border-color:#3A3342;
+  background:linear-gradient(180deg, rgba(231,178,76,.06), transparent 42%), var(--bg-raise);
+}
+.panel--feature::before{
+  content:""; position:absolute; left:0; top:0; width:100%; height:3px;
+  background:var(--gold-grad); border-radius:var(--radius) var(--radius) 0 0;
+}
+.panel__num{
+  display:inline-flex; align-items:center; gap:.5rem; margin:0;
+  font-family:var(--font-mono); font-size:.7rem; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--gold);
+}
+.panel__num::before{
+  content:""; width:7px; height:7px; flex:none;
+  background:var(--gold-grad); transform:rotate(45deg);
+}
+.panel__title{
+  margin:.55rem 0 0;
+  font-family:var(--font-display); font-weight:800; font-stretch:120%;
+  text-transform:uppercase; letter-spacing:.02em; line-height:1.05;
+  font-size:clamp(1.35rem, 3vw, 2rem);
+}
+.panel--feature .panel__title{ font-size:clamp(1.7rem, 4vw, 2.6rem); }
+.panel__text{ margin:1rem 0 0; color:var(--text-dim); max-width:60ch; }
+.panel__sub{
+  margin:0 0 .8rem;
+  font-family:var(--font-mono); font-size:.7rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--text-mute);
+}
+
+.panel__inner{ display:grid; gap:2rem; }
+@media (min-width:840px){
+  .panel__inner{ grid-template-columns:1.3fr .7fr; align-items:start; }
+}
+.evt-list{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:.5rem; }
+.evt-list li{
+  font-family:var(--font-mono); font-size:.75rem; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--text);
+  border:1px solid var(--line); border-radius:8px; padding:.5rem .8rem; background:var(--bg);
+}
+
+.rig{ display:grid; margin-top:1.7rem; border-top:1px solid var(--line); }
+@media (min-width:680px){ .rig{ grid-template-columns:1fr 1fr; column-gap:2.6rem; } }
+.rig__row{
+  padding:1.1rem 0; border-bottom:1px solid var(--line-soft);
+  transition:background .2s ease;
+}
+.rig__row:hover{ background:rgba(231,178,76,.04); }
+.rig__name{
+  position:relative; display:block; padding-left:1.15rem;
+  font-family:var(--font-display); font-weight:700; font-stretch:115%;
+  text-transform:uppercase; letter-spacing:.03em; font-size:1rem;
+  transition:color .2s ease;
+}
+.rig__name::before{
+  content:""; position:absolute; left:0; top:.5em; width:7px; height:7px;
+  background:var(--gold-grad); transform:rotate(45deg);
+}
+.rig__row:hover .rig__name{ color:var(--gold); }
+.rig__desc{ display:block; margin:.3rem 0 0 1.15rem; color:var(--text-dim); font-size:.87rem; }
+
+/* ---------- como trabalhamos ---------- */
+.steps{ margin-top:clamp(2.2rem, 5vw, 3.5rem); border-top:1px solid var(--line); }
+.step{
+  display:grid; grid-template-columns:auto 1fr; align-items:start;
+  gap:clamp(1rem, 4vw, 2.5rem);
+  padding:clamp(1.4rem, 3vw, 2rem) 0; border-bottom:1px solid var(--line);
+}
+.step__num{
+  font-family:var(--font-display); font-weight:900; font-stretch:125%; line-height:1;
+  font-size:clamp(1.6rem, 4vw, 2.4rem);
+  background:var(--gold-grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.step__title{
+  margin:0;
+  font-family:var(--font-display); font-weight:700; font-stretch:115%;
+  text-transform:uppercase; letter-spacing:.03em;
+  font-size:clamp(1.05rem, 2.2vw, 1.3rem);
+  transition:color .2s ease;
+}
+.step:hover .step__title{ color:var(--gold); }
+.step__text{ margin:.5rem 0 0; color:var(--text-dim); max-width:56ch; }
+
+/* ---------- contacto ---------- */
+.contact__grid{ display:grid; gap:clamp(2rem, 5vw, 3.5rem); margin-top:2.5rem; }
+@media (min-width:900px){ .contact__grid{ grid-template-columns:1fr 1fr; align-items:start; } }
+
+.contact__lead{
+  margin:.6rem 0 0; max-width:16ch;
+  font-family:var(--font-display); font-weight:800; font-stretch:120%;
+  text-transform:uppercase; letter-spacing:.02em; line-height:1.04;
+  font-size:clamp(1.9rem, 5.2vw, 3.4rem); text-wrap:balance;
+}
+
+.contacts{ list-style:none; padding:0; margin:2rem 0 0; display:grid; gap:.2rem; }
+.contacts a{
+  display:flex; align-items:baseline; gap:.9rem; flex-wrap:wrap;
+  padding:1rem 0; border-bottom:1px solid var(--line-soft);
+  text-decoration:none; color:var(--text);
+  font-family:var(--font-display); font-weight:700; font-stretch:112%;
+  font-size:clamp(1.02rem, 2.2vw, 1.4rem);
+  overflow-wrap:anywhere;
+  transition:color .2s ease;
+}
+.contacts a:hover{ color:var(--gold); }
+.contacts .lbl{
+  flex:none; min-width:8ch;
+  font-family:var(--font-mono); font-weight:500; font-size:.68rem;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--text-mute);
+}
+.contacts .sub{
+  display:block; margin-top:.15rem;
+  font-family:var(--font-body); font-weight:400; font-size:.8rem;
+  letter-spacing:0; text-transform:none; color:var(--text-dim);
+}
+
+.form{
+  display:grid; gap:1rem;
+  border:1px solid var(--line); border-radius:var(--radius);
+  background:var(--bg-raise); padding:clamp(1.4rem, 4vw, 2.2rem);
+}
+.field{ display:grid; gap:.4rem; }
+.field label{
+  font-family:var(--font-mono); font-size:.7rem; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--text-dim);
+}
+.field input,.field select,.field textarea{
+  width:100%; padding:.7rem .85rem;
+  font-family:var(--font-body); font-size:16px; color:var(--text);  /* 16px evita o zoom automático no iOS ao focar */
+  background:var(--bg); border:1px solid var(--line); border-radius:var(--radius-sm);
+  transition:border-color .2s ease, box-shadow .2s ease;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none; border-color:var(--gold); box-shadow:0 0 0 3px rgba(231,178,76,.15);
+}
+.field textarea{ resize:vertical; min-height:118px; }
+.form__row{ display:grid; gap:1rem; }
+@media (min-width:520px){ .form__row{ grid-template-columns:1fr 1fr; } }
+.form__note{ margin:0; font-size:.77rem; color:var(--text-mute); }
+.form__note strong{ color:var(--text-dim); font-weight:600; }
+.form__hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+.form__body{ display:grid; gap:1rem; }
+.form__status{ margin:0; font-size:.85rem; line-height:1.5; }
+.form__status:empty{ display:none; }
+.form__status.is-ok{ color:var(--ok); }
+.form__status.is-err{ color:#F2A6A6; }
+.form button[type="submit"][disabled]{ opacity:.6; cursor:progress; }
+
+/* estado de sucesso — troca o formulário por um painel animado */
+.form.is-sent .form__body{ display:none; }
+.form__done{
+  display:none; flex-direction:column; align-items:center; text-align:center;
+  gap:.35rem; padding:1.4rem 0 .6rem;
+}
+.form.is-sent .form__done{ display:flex; }
+.form__check{ width:60px; height:60px; overflow:visible; }
+.form__check-c,.form__check-t{
+  fill:none; stroke:var(--gold); stroke-linecap:round; stroke-linejoin:round;
+}
+.form__check-c{ stroke-width:2.5; }
+.form__check-t{ stroke-width:3.6; }
+.form__done-title{
+  margin:.7rem 0 0;
+  font-family:var(--font-display); font-weight:800; font-stretch:118%;
+  text-transform:uppercase; letter-spacing:.03em; font-size:1.15rem; color:var(--text);
+}
+.form__done-text{ margin:0; color:var(--text-dim); font-size:.9rem; max-width:34ch; }
+.form__again{
+  margin-top:.9rem; cursor:pointer;
+  background:none; border:1px solid var(--line); border-radius:999px;
+  color:var(--text-dim); padding:.55rem 1.1rem;
+  font-family:var(--font-mono); font-weight:600; font-size:.72rem;
+  letter-spacing:.08em; text-transform:uppercase;
+  transition:border-color .2s ease, color .2s ease;
+}
+.form__again:hover{ border-color:var(--gold); color:var(--text); }
+
+@media (prefers-reduced-motion: no-preference){
+  .form.is-sent .form__done{ animation:doneIn .55s cubic-bezier(.16,.8,.24,1) both; }
+  .form__check-c{ stroke-dasharray:151; stroke-dashoffset:151; }
+  .form__check-t{ stroke-dasharray:44; stroke-dashoffset:44; }
+  .form.is-sent .form__check-c{ animation:draw .5s ease forwards .12s; }
+  .form.is-sent .form__check-t{ animation:draw .3s ease forwards .5s; }
+  .form.is-error{ animation:shake .4s ease; }
+}
+@keyframes doneIn{ from{ opacity:0; transform:translateY(14px) scale(.96); } to{ opacity:1; transform:none; } }
+@keyframes draw{ to{ stroke-dashoffset:0; } }
+@keyframes shake{
+  10%,90%{ transform:translateX(-2px); } 30%,70%{ transform:translateX(4px); }
+  50%{ transform:translateX(-5px); }
+}
+
+/* ---------- rodapé ---------- */
+.site-footer{
+  position:relative; z-index:2; background:var(--bg);
+  border-top:1px solid var(--line); padding-block:clamp(3rem, 7vw, 4.5rem);
+}
+.footer__grid{ display:grid; gap:2.2rem; }
+@media (min-width:760px){ .footer__grid{ grid-template-columns:1.5fr 1fr 1fr; } }
+.footer__grid + .container{ margin-top:2.5rem; }
+.wordmark--sm{ align-items:flex-start; gap:.4rem; }
+.wordmark--sm .wordmark__main{ font-size:1.5rem; filter:none; }
+.wordmark--sm .wordmark__sub{ letter-spacing:.4em; margin-right:-.4em; font-size:.6rem; }
+.footer__missao{
+  margin:1rem 0 .2rem;
+  font-family:var(--font-display); font-weight:700; font-stretch:112%;
+  text-transform:uppercase; letter-spacing:.03em; font-size:1rem; color:var(--text);
+}
+.site-footer h3{
+  margin:0 0 1rem;
+  font-family:var(--font-mono); font-size:.7rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--text-mute);
+}
+.site-footer ul{ list-style:none; padding:0; margin:0; display:grid; gap:.6rem; }
+.site-footer a{ color:var(--text-dim); text-decoration:none; font-size:.9rem; }
+.site-footer a:hover{ color:var(--gold); }
+.site-footer small{
+  color:var(--text-mute);
+  font-family:var(--font-mono); font-size:.71rem; letter-spacing:.06em;
+}
+
+/* ---------- reveal (parte de um estado visível) ---------- */
+@media (prefers-reduced-motion: no-preference){
+  html.js .reveal{ opacity:0; transform:translateY(30px); filter:blur(6px); }
+  html.js .reveal.in{
+    opacity:1; transform:none; filter:blur(0);
+    transition:opacity .7s ease, transform .85s cubic-bezier(.16,.8,.24,1), filter .6s ease;
+  }
+  html.js .svc-stack .panel:nth-child(2){ transition-delay:.08s; }
+  html.js .svc-stack .panel:nth-child(3){ transition-delay:.16s; }
+  html.js .steps .step:nth-child(2){ transition-delay:.05s; }
+  html.js .steps .step:nth-child(3){ transition-delay:.10s; }
+  html.js .steps .step:nth-child(4){ transition-delay:.15s; }
+  html.js .steps .step:nth-child(5){ transition-delay:.20s; }
+}
+
+/* ============================================================
+   MOVIMENTO — sequência de entrada, brilhos e micro-interações
+   Tudo dentro de (prefers-reduced-motion: no-preference).
+   ============================================================ */
+
+/* barra de progresso de leitura */
+.scroll-progress{
+  position:fixed; inset:0 0 auto 0; height:3px; z-index:60;
+  background:var(--gold-grad); transform:scaleX(0); transform-origin:0 50%;
+  will-change:transform;
+}
+@media (prefers-reduced-motion: reduce){ .scroll-progress{ display:none; } }
+
+/* followspot que segue o rato no hero */
+.spot{
+  position:absolute; left:0; top:0; z-index:1;
+  width:min(62vw, 560px); aspect-ratio:1; border-radius:50%;
+  pointer-events:none; opacity:0;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle at center,
+    rgba(231,178,76,.20), rgba(127,96,196,.07) 45%, transparent 70%);
+  mix-blend-mode:screen; transition:opacity .5s ease;
+}
+.hero.spot-on .spot{ opacity:1; }
+@media (prefers-reduced-motion: reduce){ .spot{ display:none; } }
+
+/* faixa/ticker de palavras-chave */
+.ticker{
+  position:relative; z-index:2; overflow:hidden;
+  background:var(--bg); border-block:1px solid var(--line);
+  padding:1.05rem 0;
+  -webkit-mask-image:linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+          mask-image:linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+}
+.ticker__track{
+  display:flex; flex-wrap:nowrap; align-items:center; gap:2.2rem; width:max-content;
+  font-family:var(--font-display); font-weight:700; font-stretch:118%;
+  text-transform:uppercase; letter-spacing:.05em;
+  font-size:clamp(.95rem, 2vw, 1.35rem); color:var(--text);
+}
+.ticker__track > i{
+  width:8px; height:8px; flex:none;
+  background:var(--gold-grad); transform:rotate(45deg);
+}
+.ticker__track > span:nth-child(4n+3){ color:var(--text-dim); }
+@media (prefers-reduced-motion: no-preference){
+  html.js .ticker__track{ animation:marquee 34s linear infinite; }
+  html.js .ticker:hover .ticker__track{ animation-play-state:paused; }
+}
+@keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+/* sequência de entrada do hero (corre no load, sem observer) */
+@media (prefers-reduced-motion: no-preference){
+  .hero .kicker,
+  .hero .wordmark,
+  .hero__tagline,
+  .hero__lead,
+  .hero__cta,
+  .hero__tags{ animation:heroRise .8s cubic-bezier(.16,.8,.24,1) both; }
+  .hero .kicker{ animation-delay:.04s; }
+  .hero .wordmark{ animation-delay:.11s; }
+  .hero__tagline{ animation-delay:.22s; }
+  .hero__lead{ animation-delay:.31s; }
+  .hero__cta{ animation-delay:.40s; }
+  .hero__tags{ animation-delay:.49s; }
+
+  /* brilho metálico a varrer o logótipo do hero */
+  .hero .wordmark__main{ animation:shimmer 7s ease-in-out 1.4s infinite; }
+
+  /* pop do número em cada passo */
+  html.js .step .step__num{ opacity:0; transform:translateX(-18px) scale(.8); transform-origin:left center; }
+  html.js .step.in .step__num{
+    opacity:1; transform:none;
+    transition:opacity .5s ease .12s, transform .65s cubic-bezier(.16,.8,.24,1) .12s;
+  }
+
+  /* linha dourada a crescer sob o título de secção */
+  html.js .s-title{ position:relative; }
+  html.js .s-title::after{
+    content:""; position:absolute; left:0; bottom:-.5rem; height:2px; width:64px;
+    background:var(--gold-grad); transform:scaleX(0); transform-origin:0 50%;
+    transition:transform .7s cubic-bezier(.16,.8,.24,1) .15s;
+  }
+  html.js .reveal.in .s-title::after,
+  html.js .s-title.reveal.in::after{ transform:scaleX(1); }
+}
+@keyframes heroRise{
+  from{ opacity:0; transform:translateY(28px); filter:blur(8px); }
+  to{ opacity:1; transform:none; filter:blur(0); }
+}
+@keyframes shimmer{
+  0%,100%{ background-position:130% 0; }
+  50%{ background-position:-30% 0; }
+}
+
+/* botões — varrimento de luz + brilho pulsante no primário */
+.btn{ position:relative; overflow:hidden; }
+.btn--gold::after{
+  content:""; position:absolute; top:0; bottom:0; left:-140%; width:55%;
+  background:linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent);
+  transform:skewX(-18deg); pointer-events:none; z-index:2;
+}
+@media (prefers-reduced-motion: no-preference){
+  .hero__cta .btn--gold{ animation:pulseGlow 3.6s ease-in-out infinite; }
+  .btn--gold:hover::after{ animation:btnSweep .85s ease forwards; }
+}
+@keyframes btnSweep{ from{ left:-140%; } to{ left:150%; } }
+@keyframes pulseGlow{
+  0%,100%{ box-shadow:0 1px 0 rgba(255,255,255,.35) inset, 0 12px 32px -14px rgba(231,178,76,.55); }
+  50%{ box-shadow:0 1px 0 rgba(255,255,255,.45) inset, 0 16px 42px -12px rgba(231,178,76,.9); }
+}
+
+/* painel em destaque — reflexo que segue o cursor */
+.panel--feature{ overflow:hidden; }
+.panel--feature::before{ z-index:2; }
+.panel--feature .panel__inner{ position:relative; z-index:1; }
+.panel--feature::after{
+  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:radial-gradient(360px circle at var(--mx,50%) var(--my,-10%),
+    rgba(231,178,76,.13), transparent 66%);
+  opacity:0; transition:opacity .45s ease;
+}
+.panel--feature:hover::after{ opacity:1; }
+
+/* elevação suave dos painéis e passos ao passar o rato */
+@media (prefers-reduced-motion: no-preference){
+  .panel,.step__title,.rig__name{ transition:transform .25s ease, border-color .25s ease, color .2s ease; }
+  .panel:hover{ transform:translateY(-4px); }
+  .step:hover .step__num{ filter:drop-shadow(0 0 18px rgba(231,178,76,.45)); }
+}
+
+/* ---------- botão flutuante de WhatsApp ---------- */
+.wa-fab{
+  position:fixed; right:clamp(1rem, 4vw, 2rem); bottom:clamp(1rem, 4vw, 2rem);
+  z-index:39;
+  display:inline-flex; align-items:center; gap:.6rem;
+  height:56px; padding:0 20px 0 16px;
+  border-radius:999px;
+  background:#25D366; color:#04301C;
+  text-decoration:none;
+  font-family:var(--font-mono); font-weight:600; font-size:.78rem;
+  letter-spacing:.06em; text-transform:uppercase;
+  box-shadow:0 12px 30px -10px rgba(37,211,102,.55), 0 2px 10px rgba(0,0,0,.35);
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease,
+             opacity .2s ease, visibility .2s ease;
+}
+.wa-fab__icon{ width:26px; height:26px; flex:none; }
+.wa-fab__label{ white-space:nowrap; }
+.wa-fab:hover{
+  background:#20c05c; transform:translateY(-3px);
+  box-shadow:0 18px 42px -10px rgba(37,211,102,.65), 0 2px 10px rgba(0,0,0,.4);
+}
+.wa-fab:focus-visible{ outline:3px solid #25D366; outline-offset:3px; }
+@media (max-width:560px){
+  .wa-fab{ width:58px; height:58px; padding:0; justify-content:center; gap:0; }
+  .wa-fab__label{ display:none; }
+}
+html.js .wa-fab.is-hidden{
+  animation:none; opacity:0; visibility:hidden;
+  transform:translateY(12px) scale(.9); pointer-events:none;
+}
+@media (prefers-reduced-motion: no-preference){
+  html.js .wa-fab{ animation:waIn .5s cubic-bezier(.2,.7,.2,1) .85s both; }
+  html.js .wa-fab::after{
+    content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+    animation:waPulse 2.8s ease-out 1.8s infinite;
+  }
+}
+@keyframes waIn{
+  from{ opacity:0; transform:translateY(18px) scale(.85); }
+  to{ opacity:1; transform:none; }
+}
+@keyframes waPulse{
+  0%{ box-shadow:0 0 0 0 rgba(37,211,102,.45); }
+  70%{ box-shadow:0 0 0 18px rgba(37,211,102,0); }
+  100%{ box-shadow:0 0 0 0 rgba(37,211,102,0); }
+}
+</style>
+</head>
+<body>
+
+<div class="fx" aria-hidden="true"><canvas class="fx__c" id="fx"></canvas></div>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<a class="skip" href="#main">Saltar para o conteúdo</a>
+
+<header class="site-header" id="top">
+  <a class="brand" href="#inicio" aria-label="Stage One Produções — início">
+    <img src="./logo-wordmark.png" alt="Stage One Produções">
+  </a>
+  <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="nav" id="nav" aria-label="Navegação principal">
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#processo">Como trabalhamos</a>
+    <a href="#contacto">Contacto</a>
+    <a class="btn btn--gold btn--sm" href="#contacto">Pedir orçamento</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="inicio">
+    <div class="spot" aria-hidden="true"></div>
+    <div class="container">
+      <p class="kicker"><span></span>Produção de eventos · Portugal<span></span></p>
+
+      <h1 class="wordmark" aria-label="Stage One Produções">
+        <span class="wordmark__main" aria-hidden="true">Stage<span class="wordmark__div"></span>One</span>
+        <span class="wordmark__sub" aria-hidden="true">Produções</span>
+      </h1>
+
+      <p class="hero__tagline">Produzimos momentos. Conectamos talentos. Criamos grandes histórias.</p>
+      <p class="hero__lead">Uma empresa dedicada à produção e organização de eventos — festas, concertos, festivais, eventos empresariais e celebrações — com contratação de artistas e aluguer de som, luz, ledwall, geradores, palcos e camarins.</p>
+
+      <div class="hero__cta">
+        <a class="btn btn--gold" href="#contacto">Pedir orçamento</a>
+        <a class="btn btn--ghost" href="#servicos">Ver serviços</a>
+      </div>
+
+      <ul class="hero__tags">
+        <li>Som</li><li>Luz</li><li>Ledwall</li><li>Geradores</li><li>Palcos</li><li>Camarins</li>
+      </ul>
+    </div>
+    <div class="hero__fade" aria-hidden="true"></div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>Produção de eventos</span><i></i>
+      <span>Contratação de artistas</span><i></i>
+      <span>Som</span><i></i>
+      <span>Luz</span><i></i>
+      <span>Ledwall</span><i></i>
+      <span>Geradores</span><i></i>
+      <span>Palcos</span><i></i>
+      <span>Camarins</span><i></i>
+    </div>
+  </div>
+
+  <section class="about section" id="sobre">
+    <div class="container">
+      <div class="about__grid">
+        <div class="reveal">
+          <p class="eyebrow">Sobre</p>
+          <h2 class="s-title">Transformamos ideias em experiências únicas</h2>
+        </div>
+        <div class="about__body reveal">
+          <p class="lead">A Stage One Produções nasce com o objetivo de transformar ideias em experiências únicas.</p>
+          <p>Somos uma empresa dedicada à produção e organização de eventos, oferecendo soluções completas para festas, concertos, festivais, eventos empresariais e celebrações.</p>
+          <p>Trabalhamos também na contratação e gestão de artistas, aproximando talentos do público e garantindo uma experiência profissional do primeiro contacto até ao final do evento.</p>
+          <p>Disponibilizamos ainda aluguer de som, luz, ledwall, geradores, palcos e camarins, proporcionando as condições e estruturas necessárias para que cada evento aconteça com segurança, qualidade e profissionalismo.</p>
+          <p>Na Stage One, acreditamos que cada evento é único.</p>
+          <dl class="values">
+            <div><dt>Rigor</dt><dd>Planeamento detalhado e execução segura, do papel ao palco.</dd></div>
+            <div><dt>Criatividade</dt><dd>Cada evento com uma identidade própria, adaptada a quem confia em nós.</dd></div>
+            <div><dt>Compromisso</dt><dd>Acompanhamento próximo do primeiro contacto ao último momento.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services section" id="servicos">
+    <div class="container">
+      <p class="eyebrow reveal">Serviços</p>
+      <h2 class="s-title reveal">Soluções completas para o teu evento</h2>
+
+      <div class="svc-stack">
+        <article class="panel panel--feature reveal">
+          <div class="panel__inner">
+            <div>
+              <p class="panel__num">Núcleo</p>
+              <h3 class="panel__title">Produção de eventos</h3>
+              <p class="panel__text">Produção e organização de eventos de ponta a ponta — conceito, planeamento, logística, montagem e operação no local, com segurança e profissionalismo em cada detalhe.</p>
+            </div>
+            <div>
+              <p class="panel__sub">Fazemos acontecer</p>
+              <ul class="evt-list">
+                <li>Festas</li>
+                <li>Concertos</li>
+                <li>Festivais</li>
+                <li>Eventos empresariais</li>
+                <li>Celebrações</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel reveal">
+          <p class="panel__num">Talento</p>
+          <h3 class="panel__title">Contratação de artistas</h3>
+          <p class="panel__text">Contratação e gestão de artistas, aproximando talentos do público. Tratamos de contactos, contratos, cachês, hospitality e coordenação — uma experiência profissional do primeiro contacto até ao final do evento.</p>
+        </article>
+
+        <article class="panel reveal">
+          <p class="panel__num">Técnica</p>
+          <h3 class="panel__title">Aluguer de equipamento</h3>
+          <p class="panel__text">Som, luz, ledwall, geradores, palcos e camarins — as estruturas e condições técnicas necessárias para que cada evento aconteça com segurança e qualidade.</p>
+          <div class="rig">
+            <div class="rig__row">
+              <span class="rig__name">Som</span>
+              <span class="rig__desc">Sistemas de PA, monitores e mesas de mistura para salas e recintos ao ar livre.</span>
+            </div>
+            <div class="rig__row">
+              <span class="rig__name">Luz</span>
+              <span class="rig__desc">Projetores, moving heads e controlo DMX para desenho de luz de palco.</span>
+            </div>
+            <div class="rig__row">
+              <span class="rig__name">Ledwall</span>
+              <span class="rig__desc">Ecrãs LED modulares para cenário, indoor e outdoor, com processamento de vídeo.</span>
+            </div>
+            <div class="rig__row">
+              <span class="rig__name">Geradores</span>
+              <span class="rig__desc">Grupos eletrogéneos e distribuição elétrica com potência à medida do evento.</span>
+            </div>
+            <div class="rig__row">
+              <span class="rig__name">Palcos</span>
+              <span class="rig__desc">Estruturas de palco, coberturas e torres para som e luz.</span>
+            </div>
+            <div class="rig__row">
+              <span class="rig__name">Camarins</span>
+              <span class="rig__desc">Módulos de camarim equipados para artistas e equipa de produção.</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="process section" id="processo">
+    <div class="container">
+      <p class="eyebrow reveal">Como trabalhamos</p>
+      <h2 class="s-title reveal">Do primeiro contacto ao final do evento</h2>
+
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step__num">01</span>
+          <div>
+            <h3 class="step__title">Contacto e briefing</h3>
+            <p class="step__text">Ouvimos a tua ideia, objetivos, data, público e orçamento.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">02</span>
+          <div>
+            <h3 class="step__title">Proposta e planeamento</h3>
+            <p class="step__text">Desenhamos a solução, o cronograma e o mapa técnico do evento.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">03</span>
+          <div>
+            <h3 class="step__title">Produção e logística</h3>
+            <p class="step__text">Coordenamos equipamento, equipas, artistas, transportes e licenças.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">04</span>
+          <div>
+            <h3 class="step__title">Montagem e show</h3>
+            <p class="step__text">Montamos, afinamos e operamos o evento no local, do início ao fim.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">05</span>
+          <div>
+            <h3 class="step__title">Desmontagem e balanço</h3>
+            <p class="step__text">Desmontamos com cuidado e fazemos o balanço do evento contigo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact section" id="contacto">
+    <div class="container">
+      <p class="eyebrow reveal">Contacto</p>
+      <div class="contact__grid">
+        <div class="reveal">
+          <h2 class="contact__lead">O teu evento,<br>a nossa missão.</h2>
+          <p class="panel__text">Conta-nos o que estás a preparar. Respondemos com uma proposta à medida.</p>
+          <ul class="contacts">
+            <li>
+              <a href="tel:+351932091099">
+                <span class="lbl">Telefone</span>
+                <span>932 091 099<span class="sub">Filipe Remelhe</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:stageone-prod@hotmail.com">
+                <span class="lbl">Email</span>
+                <span>stageone-prod@hotmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/stage_one_producoes/" target="_blank" rel="noopener">
+                <span class="lbl">Instagram</span>
+                <span>@stage_one_producoes</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <form class="form reveal" id="contactForm" action="https://formspree.io/f/mrpgadwq" method="POST">
+          <input type="hidden" name="_subject" value="Novo pedido de orçamento — site Stage One">
+          <input type="text" class="form__hp" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="form__body">
+            <div class="field">
+              <label for="f-nome">Nome</label>
+              <input id="f-nome" name="Nome" type="text" autocomplete="name" required>
+            </div>
+            <div class="form__row">
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="f-tel">Telefone</label>
+                <input id="f-tel" name="Telefone" type="tel" autocomplete="tel">
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="field">
+                <label for="f-tipo">Tipo de evento</label>
+                <select id="f-tipo" name="Tipo de evento">
+                  <option>Festa</option>
+                  <option>Concerto</option>
+                  <option>Festival</option>
+                  <option>Evento empresarial</option>
+                  <option>Celebração</option>
+                  <option>Outro</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-data">Data prevista</label>
+                <input id="f-data" name="Data prevista" type="date">
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-msg">Mensagem</label>
+              <textarea id="f-msg" name="Mensagem" rows="4" placeholder="Local, número de pessoas, o que precisas (som, luz, ledwall, palco, artistas)…"></textarea>
+            </div>
+            <button class="btn btn--gold" type="submit">Enviar pedido</button>
+            <p class="form__note">Enviamos o teu pedido diretamente para a equipa da Stage One. Resposta normalmente em 24–48&nbsp;h.</p>
+            <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+          </div>
+
+          <div class="form__done" hidden>
+            <svg class="form__check" viewBox="0 0 52 52" aria-hidden="true">
+              <circle class="form__check-c" cx="26" cy="26" r="24"/>
+              <path class="form__check-t" d="M15 27 l7.5 7.5 L38 18"/>
+            </svg>
+            <p class="form__done-title">Pedido enviado</p>
+            <p class="form__done-text">Obrigado! Entramos em contacto o mais rápido possível.</p>
+            <button type="button" class="form__again">Enviar outro pedido</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div>
+      <div class="wordmark wordmark--sm" aria-label="Stage One Produções">
+        <span class="wordmark__main" aria-hidden="true">Stage<span class="wordmark__div"></span>One</span>
+        <span class="wordmark__sub" aria-hidden="true">Produções</span>
+      </div>
+      <p class="footer__missao">O teu evento, a nossa missão.</p>
+      <p><small>Produção de eventos · Contratação de artistas · Aluguer técnico</small></p>
+    </div>
+    <div>
+      <h3>Contacto</h3>
+      <ul>
+        <li><a href="tel:+351932091099">932 091 099 — Filipe Remelhe</a></li>
+        <li><a href="mailto:stageone-prod@hotmail.com">stageone-prod@hotmail.com</a></li>
+        <li><a href="https://www.instagram.com/stage_one_producoes/" target="_blank" rel="noopener">@stage_one_producoes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Serviços</h3>
+      <ul>
+        <li><a href="#servicos">Produção de eventos</a></li>
+        <li><a href="#servicos">Contratação de artistas</a></li>
+        <li><a href="#servicos">Aluguer de equipamento</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <p><small>© <span id="year">2026</span> Stage One Produções. Todos os direitos reservados.</small></p>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/351932091099?text=Ol%C3%A1!%20Gostava%20de%20pedir%20um%20or%C3%A7amento%20para%20um%20evento." target="_blank" rel="noopener" aria-label="Falar connosco no WhatsApp">
+  <svg class="wa-fab__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="wa-fab__label">Fala connosco</span>
+</a>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* cabeçalho + barra de progresso + parallax do hero */
+  var header = document.querySelector(".site-header");
+  var prog = document.querySelector(".scroll-progress");
+  var heroInner = document.querySelector(".hero .container");
+  var docEl = document.documentElement;
+  var ticking = false;
+  var render = function(){
+    ticking = false;
+    var yy = window.scrollY || window.pageYOffset;
+    header.classList.toggle("is-scrolled", yy > 8);
+    if(prog){
+      var max = docEl.scrollHeight - docEl.clientHeight;
+      prog.style.transform = "scaleX(" + (max > 0 ? Math.min(1, yy / max) : 0) + ")";
+    }
+    if(heroInner && !reduce){
+      if(yy < 720){
+        heroInner.style.transform = "translateY(" + (yy * 0.16).toFixed(1) + "px)";
+        heroInner.style.opacity = Math.max(0, 1 - yy / 560).toFixed(3);
+      } else {
+        heroInner.style.opacity = "0";
+      }
+    }
+  };
+  var onScroll = function(){
+    if(!ticking){ ticking = true; requestAnimationFrame(render); }
+  };
+  render();
+  window.addEventListener("scroll", onScroll, { passive:true });
+  window.addEventListener("resize", onScroll, { passive:true });
+
+  /* menu mobile */
+  var toggle = document.querySelector(".nav-toggle");
+  var nav = document.getElementById("nav");
+  var waFab = document.querySelector(".wa-fab");
+  var setNav = function(open){
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+    nav.classList.toggle("is-open", open);
+    document.body.style.overflow = open ? "hidden" : "";
+    if(waFab){ waFab.classList.toggle("is-hidden", open); }
+  };
+  toggle.addEventListener("click", function(){
+    setNav(toggle.getAttribute("aria-expanded") !== "true");
+  });
+  nav.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){ setNav(false); }
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){ setNav(false); }
+  });
+  window.addEventListener("resize", function(){
+    if(window.innerWidth > 860){ setNav(false); }
+  });
+
+  /* reveal a partir de um estado visível */
+  var revs = document.querySelectorAll(".reveal");
+  if(reduce || !("IntersectionObserver" in window)){
+    revs.forEach(function(el){ el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.classList.add("in");
+          io.unobserve(en.target);
+        }
+      });
+    }, { rootMargin:"0px 0px -8% 0px", threshold:0.12 });
+    revs.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ano no rodapé */
+  var y = document.getElementById("year");
+  if(y){ y.textContent = String(new Date().getFullYear()); }
+
+  /* formulário -> envio AJAX para o Formspree (fica no site; fallback sem JS = POST normal) */
+  var form = document.getElementById("contactForm");
+  if(form){
+    var statusEl = document.getElementById("formStatus");
+    var submitBtn = form.querySelector("button[type=submit]");
+    var formDone = form.querySelector(".form__done");
+    var againBtn = form.querySelector(".form__again");
+
+    var setStatus = function(kind, text){
+      if(!statusEl){ return; }
+      statusEl.textContent = text || "";
+      statusEl.className = "form__status" + (kind ? " is-" + kind : "");
+    };
+    var flashError = function(text){
+      setStatus("err", text);
+      form.classList.remove("is-error");
+      void form.offsetWidth;            /* reinicia a animação */
+      form.classList.add("is-error");
+    };
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      setStatus("", "");
+      if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = "A enviar…"; }
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      }).then(function(res){
+        if(res.ok){
+          if(formDone){ formDone.hidden = false; }
+          form.classList.add("is-sent");
+          form.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+        } else {
+          return res.json().then(function(data){
+            flashError((data && data.errors && data.errors.map(function(x){ return x.message; }).join(" "))
+              || "Não foi possível enviar. Tenta de novo ou escreve para stageone-prod@hotmail.com.");
+          });
+        }
+      }).catch(function(){
+        flashError("Sem ligação à internet. Tenta de novo ou escreve para stageone-prod@hotmail.com.");
+      }).then(function(){
+        if(submitBtn){ submitBtn.disabled = false; submitBtn.textContent = "Enviar pedido"; }
+      });
+    });
+
+    if(againBtn){
+      againBtn.addEventListener("click", function(){
+        form.reset();
+        setStatus("", "");
+        form.classList.remove("is-sent");
+        if(formDone){ formDone.hidden = true; }
+        var first = form.querySelector(".form__body input, .form__body select, .form__body textarea");
+        if(first){ first.focus(); }
+      });
+    }
+  }
+
+  /* ticker infinito: duplica o conteúdo para o loop ser contínuo */
+  var track = document.querySelector(".ticker__track");
+  if(track && !reduce){ track.innerHTML += track.innerHTML; }
+
+  var finePointer = window.matchMedia("(pointer: fine)").matches;
+
+  /* followspot que segue o rato no hero */
+  if(!reduce && finePointer){
+    var hero = document.getElementById("inicio");
+    var spot = hero && hero.querySelector(".spot");
+    if(spot){
+      var sx = 0, sy = 0, dx = 0, dy = 0, spotRaf = 0;
+      var spotLoop = function(){
+        dx += (sx - dx) * 0.14;
+        dy += (sy - dy) * 0.14;
+        spot.style.transform = "translate(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px) translate(-50%,-50%)";
+        if(Math.abs(sx - dx) > 0.4 || Math.abs(sy - dy) > 0.4){
+          spotRaf = requestAnimationFrame(spotLoop);
+        } else { spotRaf = 0; }
+      };
+      hero.addEventListener("pointerenter", function(e){
+        var r = hero.getBoundingClientRect();
+        sx = dx = e.clientX - r.left; sy = dy = e.clientY - r.top;
+        hero.classList.add("spot-on");
+      });
+      hero.addEventListener("pointerleave", function(){ hero.classList.remove("spot-on"); });
+      hero.addEventListener("pointermove", function(e){
+        var r = hero.getBoundingClientRect();
+        sx = e.clientX - r.left; sy = e.clientY - r.top;
+        if(!spotRaf){ spotRaf = requestAnimationFrame(spotLoop); }
+      }, { passive:true });
+    }
+  }
+
+  /* reflexo que segue o cursor no painel em destaque */
+  if(!reduce && finePointer){
+    document.querySelectorAll(".panel--feature").forEach(function(p){
+      p.addEventListener("pointermove", function(e){
+        var r = p.getBoundingClientRect();
+        p.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100).toFixed(1) + "%");
+        p.style.setProperty("--my", ((e.clientY - r.top) / r.height * 100).toFixed(1) + "%");
+      }, { passive:true });
+    });
+  }
+
+  /* ambiente: luz de palco em movimento lento */
+  if(!reduce){
+    var c = document.getElementById("fx");
+    if(c && c.getContext){
+      var ctx = c.getContext("2d"), w = 0, h = 0, dpr = 1, raf = 0, last = 0;
+      var blobs = [
+        { col:"231,178,76",  r:0.60, px:0.20, py:0.02, ax:0.13, ay:0.09, sx:0.9, sy:1.3 },
+        { col:"127,96,196",  r:0.55, px:0.82, py:0.08, ax:0.12, ay:0.11, sx:1.3, sy:0.8 },
+        { col:"255,236,206", r:0.34, px:0.52, py:-0.04, ax:0.10, ay:0.07, sx:1.7, sy:1.1 }
+      ];
+      var resize = function(){
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        w = c.clientWidth; h = c.clientHeight;
+        c.width = Math.round(w * dpr); c.height = Math.round(h * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      };
+      var frame = function(now){
+        raf = requestAnimationFrame(frame);
+        if(now - last < 32){ return; }
+        last = now;
+        var t = now / 1000;
+        ctx.clearRect(0, 0, w, h);
+        ctx.globalCompositeOperation = "lighter";
+        for(var i = 0; i < blobs.length; i++){
+          var b = blobs[i];
+          var cx = (b.px + Math.sin(t * 0.06 * b.sx) * b.ax) * w;
+          var cy = (b.py + b.ay + Math.cos(t * 0.06 * b.sy) * b.ay) * h;
+          var rad = b.r * Math.max(w, h);
+          var g = ctx.createRadialGradient(cx, cy, 0, cx, cy, rad);
+          g.addColorStop(0, "rgba(" + b.col + ",0.16)");
+          g.addColorStop(1, "rgba(" + b.col + ",0)");
+          ctx.fillStyle = g;
+          ctx.fillRect(0, 0, w, h);
+        }
+      };
+      resize();
+      window.addEventListener("resize", resize, { passive:true });
+      document.addEventListener("visibilitychange", function(){
+        if(document.hidden){ cancelAnimationFrame(raf); raf = 0; }
+        else if(!raf){ last = 0; raf = requestAnimationFrame(frame); }
+      });
+      raf = requestAnimationFrame(frame);
+    }
+  }
+})();
+</script>
+</body>
+</html>

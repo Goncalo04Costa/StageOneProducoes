@@ -1,0 +1,7 @@
+# Stage One Produções
+# Ao publicar, troca o domínio abaixo pelo domínio real.
+
+User-agent: *
+Disallow:
+
+Sitemap: https://stageoneproducoes.pt/sitemap.xml
