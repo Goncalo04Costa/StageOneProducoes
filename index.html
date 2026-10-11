@@ -175,7 +175,7 @@ body::after{
   padding-inline:var(--pad-x);
 }
 .section{ position:relative; z-index:2; scroll-margin-top:4.5rem; }
-.about,.services,.process,.contact{ background:var(--bg); padding-block:var(--section-y); }
+.about,.services,.events,.process,.contact{ background:var(--bg); padding-block:var(--section-y); }
 
 .skip{
   position:absolute; left:-9999px; top:0; z-index:100;
@@ -467,6 +467,95 @@ body::after{
 }
 .rig__row:hover .rig__name{ color:var(--gold); }
 .rig__desc{ display:block; margin:.3rem 0 0 1.15rem; color:var(--text-dim); font-size:.87rem; }
+
+/* ---------- eventos realizados ---------- */
+.event__head{ display:grid; gap:clamp(1.6rem, 4vw, 3rem); }
+@media (min-width:900px){ .event__head{ grid-template-columns:1.1fr .9fr; align-items:end; } }
+.event__lead{ margin:0; color:var(--text-dim); max-width:56ch; }
+.event__lead + .event__lead{ margin-top:1rem; }
+.event__lead a{ color:var(--gold); text-decoration:underline; text-underline-offset:3px; text-decoration-color:rgba(231,178,76,.45); }
+.event__lead a:hover{ color:var(--gold-hi); text-decoration-color:currentColor; }
+.event__meta{
+  display:grid; gap:1px; margin:clamp(1.8rem, 4vw, 2.6rem) 0 0;
+  background:var(--line-soft); border:1px solid var(--line-soft);
+  border-radius:var(--radius); overflow:hidden;
+}
+@media (min-width:520px){ .event__meta{ grid-template-columns:repeat(3,1fr); } }
+.event__meta > div{ background:var(--bg); padding:1rem 1.15rem; }
+.event__meta dt{
+  font-family:var(--font-mono); font-size:.66rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--text-mute);
+}
+.event__meta dd{
+  margin:.3rem 0 0;
+  font-family:var(--font-display); font-weight:700; font-stretch:112%;
+  font-size:.95rem; color:var(--text);
+}
+
+.gallery{
+  list-style:none; padding:0; margin:1.15rem 0 0;
+  display:grid; gap:.5rem; grid-template-columns:repeat(2,1fr);
+}
+@media (min-width:900px){ .gallery{ grid-template-columns:repeat(4,1fr); gap:.6rem; } }
+.gallery li:first-child{ grid-column:span 2; }
+@media (min-width:900px){ .gallery li:first-child{ grid-row:span 2; } }
+.shot{
+  position:relative; display:block; height:100%; overflow:hidden;
+  border:1px solid var(--line); border-radius:var(--radius-sm);
+  background:var(--bg-raise); aspect-ratio:3/2;
+}
+.shot img{
+  display:block; width:100%; height:100%; object-fit:cover;
+  transition:transform .5s cubic-bezier(.16,.8,.24,1);
+}
+.shot::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  border-radius:inherit; box-shadow:0 0 0 0 var(--gold) inset;
+  transition:box-shadow .25s ease;
+}
+.shot:hover::after,.shot:focus-visible::after{ box-shadow:0 0 0 2px var(--gold) inset; }
+@media (prefers-reduced-motion: no-preference){
+  .shot:hover img{ transform:scale(1.05); }
+}
+.event__cta{ display:flex; flex-wrap:wrap; gap:.9rem; margin-top:2rem; }
+
+/* visualizador de fotos */
+.lightbox{
+  width:100vw; height:100vh; height:100dvh; max-width:none; max-height:none;
+  margin:0; padding:0; border:0; background:rgba(6,6,8,.94); color:var(--text);
+}
+.lightbox::backdrop{ background:rgba(6,6,8,.94); }
+.lightbox__stage{
+  position:absolute; inset:0; display:grid; place-items:center;
+  padding:3.8rem clamp(.6rem, 6vw, 5rem) 3.4rem;
+}
+.lightbox__img{
+  max-width:100%; max-height:calc(100vh - 7.2rem); max-height:calc(100dvh - 7.2rem);
+  width:auto; height:auto; object-fit:contain;
+  border-radius:var(--radius-sm); box-shadow:0 30px 80px -30px rgba(0,0,0,.9);
+}
+.lightbox__btn{
+  position:absolute; z-index:2; width:46px; height:46px;
+  display:grid; place-items:center; cursor:pointer;
+  border:1px solid var(--line); border-radius:999px;
+  background:rgba(19,17,24,.85); color:var(--text);
+  font-family:var(--font-mono); font-size:1.1rem; line-height:1;
+  transition:border-color .2s ease, color .2s ease;
+}
+.lightbox__btn:hover{ border-color:var(--gold); color:var(--gold); }
+.lightbox__close{ top:.8rem; right:.8rem; }
+.lightbox__prev{ left:.8rem; top:50%; transform:translateY(-50%); }
+.lightbox__next{ right:.8rem; top:50%; transform:translateY(-50%); }
+@media (max-width:700px){
+  .lightbox__prev,.lightbox__next{ top:auto; bottom:.7rem; transform:none; }
+  .lightbox__prev{ left:calc(50% - 5.2rem); }
+  .lightbox__next{ right:calc(50% - 5.2rem); }
+}
+.lightbox__count{
+  position:absolute; left:0; right:0; bottom:1.35rem; margin:0; text-align:center;
+  font-family:var(--font-mono); font-size:.72rem; letter-spacing:.16em; color:var(--text-dim);
+  pointer-events:none;
+}
 
 /* ---------- como trabalhamos ---------- */
 .steps{ margin-top:clamp(2.2rem, 5vw, 3.5rem); border-top:1px solid var(--line); }
@@ -839,6 +928,7 @@ html.js .wa-fab.is-hidden{
   <nav class="nav" id="nav" aria-label="Navegação principal">
     <a href="#sobre">Sobre</a>
     <a href="#servicos">Serviços</a>
+    <a href="#eventos">Eventos</a>
     <a href="#processo">Como trabalhamos</a>
     <a href="#contacto">Contacto</a>
     <a class="btn btn--gold btn--sm" href="#contacto">Pedir orçamento</a>
@@ -971,6 +1061,52 @@ html.js .wa-fab.is-hidden{
             </div>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="events section" id="eventos">
+    <div class="container">
+      <div class="event__head">
+        <div class="reveal">
+          <p class="eyebrow">Eventos</p>
+          <h2 class="s-title">Festas de Nossa Senhora do Rosário</h2>
+        </div>
+        <div class="reveal">
+          <p class="event__lead">A Comissão de Festas de Nossa Senhora do Rosário confiou na Stage One para a realização das festividades de Milhazes 2026 — noites de palco cheio, com bandas, DJs e música popular perante um recinto lotado.</p>
+          <p class="event__lead">Um agradecimento especial à <a href="https://www.facebook.com/profile.php?id=100094067121839" target="_blank" rel="noopener">Comissão de Festas Nossa Senhora do Rosário Milhazes</a> pela confiança.</p>
+        </div>
+      </div>
+
+      <dl class="event__meta reveal">
+        <div><dt>Local</dt><dd>Milhazes, Barcelos</dd></div>
+        <div><dt>Edição</dt><dd>2026</dd></div>
+        <div><dt>Organização</dt><dd>Comissão de Festas</dd></div>
+      </dl>
+
+      <ul class="gallery reveal" id="gallery" aria-label="Fotografias das Festas de Nossa Senhora do Rosário, Milhazes 2026">
+          <li><a class="shot" href="./eventos/milhazes-2026/01.jpg"><img src="./eventos/milhazes-2026/01.jpg" width="1500" height="1000" alt="Palco em arco iluminado a âmbar, com ledwall ao centro e o recinto cheio" loading="lazy" decoding="async"></a></li>
+          <li><a class="shot" href="./eventos/milhazes-2026/17.jpg"><img src="./eventos/milhazes-2026/t-17.jpg" width="720" height="480" alt="Artista de chapéu a acenar do palco para o recinto cheio" loading="lazy" decoding="async"></a></li>
+          <li><a class="shot" href="./eventos/milhazes-2026/02.jpg"><img src="./eventos/milhazes-2026/t-02.jpg" width="720" height="480" alt="Banda Remember em palco, com o ledwall em tons de roxo" loading="lazy" decoding="async"></a></li>
+          <li><a class="shot" href="./eventos/milhazes-2026/05.jpg"><img src="./eventos/milhazes-2026/t-05.jpg" width="720" height="480" alt="Cantor ao microfone sob luz azul" loading="lazy" decoding="async"></a></li>
+          <li><a class="shot" href="./eventos/milhazes-2026/09.jpg"><img src="./eventos/milhazes-2026/t-09.jpg" width="720" height="480" alt="Artista de costas no palco, com o público ao fundo" loading="lazy" decoding="async"></a></li>
+          <li><a class="shot" href="./eventos/milhazes-2026/06.jpg"><img src="./eventos/milhazes-2026/t-06.jpg" width="720" height="480" alt="Aquele Deejay na cabine, entre feixes de luz" loading="lazy" decoding="async"></a></li>
+          <li><a class="shot" href="./eventos/milhazes-2026/10.jpg"><img src="./eventos/milhazes-2026/t-10.jpg" width="720" height="480" alt="Cantor de braços abertos em frente ao ledwall" loading="lazy" decoding="async"></a></li>
+          <li><a class="shot" href="./eventos/milhazes-2026/12.jpg"><img src="./eventos/milhazes-2026/t-12.jpg" width="720" height="480" alt="Palco com pirotecnia fria, a preto e branco" loading="lazy" decoding="async"></a></li>
+          <li><a class="shot" href="./eventos/milhazes-2026/14.jpg"><img src="./eventos/milhazes-2026/t-14.jpg" width="720" height="480" alt="Kardo em palco, com feixes de luz verdes e brancos" loading="lazy" decoding="async"></a></li>
+          <li><a class="shot" href="./eventos/milhazes-2026/03.jpg"><img src="./eventos/milhazes-2026/t-03.jpg" width="720" height="480" alt="Baterista a levantar a baqueta, a preto e branco" loading="lazy" decoding="async"></a></li>
+          <li><a class="shot" href="./eventos/milhazes-2026/15.jpg"><img src="./eventos/milhazes-2026/t-15.jpg" width="720" height="480" alt="Amigos de Sobreposta a atuar em palco" loading="lazy" decoding="async"></a></li>
+          <li><a class="shot" href="./eventos/milhazes-2026/13.jpg"><img src="./eventos/milhazes-2026/t-13.jpg" width="720" height="480" alt="DJ na cabine sob luz amarela" loading="lazy" decoding="async"></a></li>
+          <li><a class="shot" href="./eventos/milhazes-2026/08.jpg"><img src="./eventos/milhazes-2026/t-08.jpg" width="720" height="480" alt="Guitarrista a saltar em palco" loading="lazy" decoding="async"></a></li>
+          <li><a class="shot" href="./eventos/milhazes-2026/16.jpg"><img src="./eventos/milhazes-2026/t-16.jpg" width="720" height="480" alt="Vista de trás do palco, com os artistas de frente para o público" loading="lazy" decoding="async"></a></li>
+          <li><a class="shot" href="./eventos/milhazes-2026/11.jpg"><img src="./eventos/milhazes-2026/t-11.jpg" width="720" height="480" alt="Guitarrista ao microfone sob luz vermelha" loading="lazy" decoding="async"></a></li>
+          <li><a class="shot" href="./eventos/milhazes-2026/07.jpg"><img src="./eventos/milhazes-2026/t-07.jpg" width="720" height="480" alt="DJ na mesa de mistura, com luzes azuis e verdes" loading="lazy" decoding="async"></a></li>
+          <li><a class="shot" href="./eventos/milhazes-2026/04.jpg"><img src="./eventos/milhazes-2026/t-04.jpg" width="720" height="480" alt="Momento em palco com a organização das festas" loading="lazy" decoding="async"></a></li>
+      </ul>
+
+      <div class="event__cta reveal">
+        <a class="btn btn--gold" href="#contacto">Quero um evento assim</a>
+        <a class="btn btn--ghost" href="https://www.instagram.com/stage_one_producoes/p/DeOp6FKDkfw/" target="_blank" rel="noopener">Ver no Instagram</a>
       </div>
     </div>
   </section>
@@ -1156,6 +1292,14 @@ html.js .wa-fab.is-hidden{
   <span class="wa-fab__label">Fala connosco</span>
 </a>
 
+<dialog class="lightbox" id="lightbox" aria-label="Fotografia ampliada">
+  <div class="lightbox__stage"><img class="lightbox__img" alt=""></div>
+  <button type="button" class="lightbox__btn lightbox__close" aria-label="Fechar">✕</button>
+  <button type="button" class="lightbox__btn lightbox__prev" aria-label="Fotografia anterior">←</button>
+  <button type="button" class="lightbox__btn lightbox__next" aria-label="Fotografia seguinte">→</button>
+  <p class="lightbox__count" aria-live="polite"></p>
+</dialog>
+
 <script>
 (function(){
   "use strict";
@@ -1291,6 +1435,39 @@ html.js .wa-fab.is-hidden{
         if(first){ first.focus(); }
       });
     }
+  }
+
+  /* galeria -> visualizador (sem JS, cada foto abre como ligação normal) */
+  var lb = document.getElementById("lightbox");
+  var shots = Array.prototype.slice.call(document.querySelectorAll("#gallery .shot"));
+  if(lb && lb.showModal && shots.length){
+    var lbImg = lb.querySelector(".lightbox__img");
+    var lbCount = lb.querySelector(".lightbox__count");
+    var lbIdx = 0;
+    var lbShow = function(i){
+      lbIdx = (i + shots.length) % shots.length;
+      lbImg.src = shots[lbIdx].href;
+      lbImg.alt = shots[lbIdx].querySelector("img").alt;
+      lbCount.textContent = (lbIdx + 1) + " / " + shots.length;
+    };
+    shots.forEach(function(a, i){
+      a.addEventListener("click", function(e){
+        e.preventDefault();
+        lbShow(i);
+        lb.showModal();
+      });
+    });
+    lb.querySelector(".lightbox__close").addEventListener("click", function(){ lb.close(); });
+    lb.querySelector(".lightbox__prev").addEventListener("click", function(){ lbShow(lbIdx - 1); });
+    lb.querySelector(".lightbox__next").addEventListener("click", function(){ lbShow(lbIdx + 1); });
+    lb.addEventListener("click", function(e){
+      if(e.target === lb || e.target.classList.contains("lightbox__stage")){ lb.close(); }
+    });
+    lb.addEventListener("keydown", function(e){
+      if(e.key === "ArrowLeft"){ lbShow(lbIdx - 1); }
+      else if(e.key === "ArrowRight"){ lbShow(lbIdx + 1); }
+    });
+    lb.addEventListener("close", function(){ shots[lbIdx].focus(); });
   }
 
   /* ticker infinito: duplica o conteúdo para o loop ser contínuo */

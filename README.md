@@ -14,6 +14,7 @@ contratação de artistas e aluguer técnico).
 | `logo-wordmark.png`  | Só o wordmark, recortado — usado no cabeçalho do site.        |
 | `icon.png`           | Favicon / ícone (512×512).                                    |
 | `og.jpg`             | Imagem de partilha (1200×630) — WhatsApp, Facebook, etc.      |
+| `eventos/`           | Fotos dos eventos realizados, uma pasta por evento (`NN.jpg` = foto completa, `t-NN.jpg` = miniatura de 720 px para a galeria). |
 | `LogoStageONE.jpeg`  | Logótipo original enviado (fonte dos assets acima).           |
 | `logo_assets.py`     | Recria `logo.jpg` / `logo-wordmark.png` / `icon.png` / `og.jpg` a partir do original. Corre: `python logo_assets.py` |
 
