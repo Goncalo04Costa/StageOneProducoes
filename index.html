@@ -480,7 +480,8 @@ body::after{
   background:var(--line-soft); border:1px solid var(--line-soft);
   border-radius:var(--radius); overflow:hidden;
 }
-@media (min-width:520px){ .event__meta{ grid-template-columns:repeat(3,1fr); } }
+@media (min-width:520px){ .event__meta{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:900px){ .event__meta{ grid-template-columns:repeat(4,1fr); } }
 .event__meta > div{ background:var(--bg); padding:1rem 1.15rem; }
 .event__meta dt{
   font-family:var(--font-mono); font-size:.66rem; letter-spacing:.16em;
@@ -491,6 +492,7 @@ body::after{
   font-family:var(--font-display); font-weight:700; font-stretch:112%;
   font-size:.95rem; color:var(--text);
 }
+.event__lineup{ margin-top:1.6rem; }
 
 .gallery{
   list-style:none; padding:0; margin:1.15rem 0 0;
@@ -1073,16 +1075,28 @@ html.js .wa-fab.is-hidden{
           <h2 class="s-title">Festas de Nossa Senhora do Rosário</h2>
         </div>
         <div class="reveal">
-          <p class="event__lead">A Comissão de Festas de Nossa Senhora do Rosário confiou na Stage One para a realização das festividades de Milhazes 2026 — noites de palco cheio, com bandas, DJs e música popular perante um recinto lotado.</p>
+          <p class="event__lead">A Comissão de Festas de Nossa Senhora do Rosário confiou na Stage One para a realização das festividades de Milhazes, de 1 a 5 de outubro de 2026, em parceria com a NOAH Audiovisuais — cinco dias de palco cheio, com bandas, DJs e música popular perante um recinto lotado.</p>
           <p class="event__lead">Um agradecimento especial à <a href="https://www.facebook.com/profile.php?id=100094067121839" target="_blank" rel="noopener">Comissão de Festas Nossa Senhora do Rosário Milhazes</a> pela confiança.</p>
         </div>
       </div>
 
       <dl class="event__meta reveal">
         <div><dt>Local</dt><dd>Milhazes, Barcelos</dd></div>
-        <div><dt>Edição</dt><dd>2026</dd></div>
+        <div><dt>Datas</dt><dd>1 a 5 de outubro de 2026</dd></div>
         <div><dt>Organização</dt><dd>Comissão de Festas</dd></div>
+        <div><dt>Parceria</dt><dd>NOAH Audiovisuais</dd></div>
       </dl>
+
+      <div class="event__lineup reveal">
+        <p class="panel__sub">Em palco</p>
+        <ul class="evt-list">
+          <li>Toy</li>
+          <li>Remember</li>
+          <li>Aquele Deejay</li>
+          <li>Kardo</li>
+          <li>Amigos de Sobreposta</li>
+        </ul>
+      </div>
 
       <ul class="gallery reveal" id="gallery" aria-label="Fotografias das Festas de Nossa Senhora do Rosário, Milhazes 2026">
           <li><a class="shot" href="./eventos/milhazes-2026/01.jpg"><img src="./eventos/milhazes-2026/01.jpg" width="1500" height="1000" alt="Palco em arco iluminado a âmbar, com ledwall ao centro e o recinto cheio" loading="lazy" decoding="async"></a></li>
